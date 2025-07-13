@@ -137,10 +137,10 @@ You will use this PAT instead of your DockerHub password for CLI login.
 
 ##  Push Your Image to DockerHub
 
-###  Log in:
+###  Log in: (Replace `yourdockerid` with your DockerHub username (e.g., `learnwithprayag`))
 
 ```bash
-docker login -u  yourdockerid (Replace `yourdockerid` with your DockerHub username (e.g., `learnwithprayag`))
+docker login -u  yourdockerid 
 ```
 
 > Use your DockerHub username and **PAT as password**.
