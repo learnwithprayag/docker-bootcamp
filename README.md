@@ -31,8 +31,7 @@ This course is **free to learn**, but access to live sessions, recordings, and c
 - 5 live Zoom sessions  
 - Slack support  
 - GitHub repo access  
-- Session recordings  
-- PDF notes  
+- Session recordings (Only 5 days) 
 - Certificate of participation
 
  **Register now:** [https://learnwithprayag.com](https://learnwithprayag.com)
