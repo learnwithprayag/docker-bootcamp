@@ -1,5 +1,5 @@
 
-#  Docker Bootcamp — (5-Day Week Days) or (2 Full days Weekend) Live Hands-on Course for DevOps
+#  Docker Bootcamp —  5 Days (Mon–Fri)  or 2 Days (Sat- Sun) Live Hands-on Course for DevOps
 
 Welcome to the **Docker Bootcamp** by [LearnWithPrayag](https://learnwithprayag.com) — a practical, community-driven course designed for DevOps engineers, cloud professionals, and anyone eager to master Docker and Docker Compose through real-world examples.
 
