@@ -19,7 +19,7 @@ Welcome to the **Docker Bootcamp** by [LearnWithPrayag](https://learnwithprayag.
 
 This course is **free to learn**, but access to live sessions, recordings, and community support requires a nominal **platform fee**:
 
-- 🇮🇳 **₹500** for learners in India  
+-  **₹500** for learners in India  
 -  **$12 USD** for international learners
 
 >  **Why the fee?**  
