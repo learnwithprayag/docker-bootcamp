@@ -122,7 +122,3 @@ docker images
 
 * Message confirming Docker is installed and container ran successfully:
   `"Hello from Docker! This message shows your installation appears to be working correctly."`
-
-
-
-Do you want me to do that next?
