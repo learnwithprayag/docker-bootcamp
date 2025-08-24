@@ -4,50 +4,70 @@
 
 ---
 
-## Lab 1: Part A – Installation and Hello World on Ubuntu/Linux
+## Lab 1: Part A – Installation and Hello World on Ubuntu/Linux (Official Method)
 
-### Step 1: Install Docker
+### Step 1: Update Package Index
 
 ```bash
 sudo apt update
-sudo apt install -y docker.io
+sudo apt install -y apt-transport-https ca-certificates curl software-properties-common gnupg lsb-release
+```
+
+### Step 2: Add Docker’s Official GPG Key
+
+```bash
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+```
+
+### Step 3: Add Docker Repository
+
+```bash
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+### Step 4: Install Docker Engine
+
+```bash
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io
+```
+
+### Step 5: Start and Enable Docker Service
+
+```bash
 sudo systemctl start docker
 sudo systemctl enable docker
 ```
 
-### Step 2: Verify Docker Installation
+### Step 6: Verify Docker Installation
 
 ```bash
 docker --version
 sudo systemctl status docker
 ```
 
-### Step 3: Run Hello World Container
+### Step 7: Run Hello World Container
 
 ```bash
 docker run hello-world
 ```
 
-* Downloads the `hello-world` image if not already present.
+* Downloads the `hello-world` image if not present.
 * Prints a confirmation message.
 
-### Step 4: Check Running Containers
+### Step 8: Check All Containers
 
 ```bash
 docker ps -a
 ```
 
-* Lists all containers, including stopped ones.
-
-### Step 5: Remove the Container
+### Step 9: Remove the Container
 
 ```bash
 docker rm <container_id>
 ```
 
-* Clean up the container after testing.
-
-### Step 6 (Optional): Check Downloaded Images
+### Step 10 (Optional): Check Downloaded Images
 
 ```bash
 docker images
@@ -55,8 +75,7 @@ docker images
 
 **Expected Outcome:**
 
-* Message confirming Docker is installed and container ran successfully:
-  `"Hello from Docker! This message shows your installation appears to be working correctly."`
+* Message: `"Hello from Docker! This message shows your installation appears to be working correctly."`
 
 ---
 
@@ -81,23 +100,17 @@ docker --version
 docker run hello-world
 ```
 
-* Confirms Docker installation by printing a success message.
-
 ### Step 4: Check Running Containers
 
 ```powershell
 docker ps -a
 ```
 
-* Lists all containers, including stopped ones.
-
 ### Step 5: Remove the Container
 
 ```powershell
 docker rm <container_id>
 ```
-
-* Clean up after testing.
 
 ### Step 6 (Optional): Check Downloaded Images
 
@@ -112,4 +125,4 @@ docker images
 
 
 
-Do you want me to prepare **Lab 2 in the same dual OS format** next?
+Do you want me to do that next?
