@@ -1,7 +1,7 @@
-# 🐳 Docker Bootcamp 
+# 🐳 Docker Hands-On Bootcamp
 
-Welcome to the **Docker Bootcamp**!  
-This is a **hands-on session  designed to take participants from installation to deploying a real app with Docker, including CI/CD automation.
+Welcome to the **Docker Hands-On Bootcamp**!  
+This session will focus on **installing Docker, running containers, learning Docker commands, networking, volumes, Docker Compose, Docker Hub, and deploying a simple app via GitHub Actions**.
 
 
 ### Module 1: Introduction
@@ -90,7 +90,6 @@ This is a **hands-on session  designed to take participants from installation to
 * Real-world adoption tips
 * Next steps for advanced Docker/Kubernetes
 
----
 
 ### Outcomes
 
