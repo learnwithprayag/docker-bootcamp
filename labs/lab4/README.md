@@ -141,5 +141,3 @@ Expected Outcome:
 * Run a container based on your custom image.
 * See the custom HTML content in the browser.
 
-
-Do you want me to do that?
