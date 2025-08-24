@@ -127,6 +127,3 @@ docker rm apache-server nginx-server
 * **Nginx container** accessible on `http://localhost:8081`
 * Able to start, stop, and remove containers successfully.
 
-
-
-Do you want me to do that next?
