@@ -123,6 +123,3 @@ docker network rm mynetwork
 * Able to create custom Docker networks and connect containers.
 * Containers can communicate using container names as hostnames.
 * Port mapping and network isolation can be tested and managed.
-
-
-Do you want me to do that?
