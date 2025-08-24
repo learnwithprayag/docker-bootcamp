@@ -154,5 +154,3 @@ docker rm test-container
 * Able to start, pause, unpause, stop, restart, inspect, and remove containers.
 * Logs and inspection commands give insight into container behavior and status.
 
-
-Do you want me to do that?
