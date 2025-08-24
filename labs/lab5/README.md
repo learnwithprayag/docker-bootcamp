@@ -121,5 +121,3 @@ docker volume rm myvolume
 * Data persists even after the container is removed.
 * Can inspect and manage volume content.
 
-
-Do you want me to do that?
