@@ -92,8 +92,8 @@ EOF
 
 ### Set Secrets in GitHub
 
-* Navigate to **Settings → Secrets → Actions**
-* Add `DOCKER_USERNAME` and `DOCKER_PASSWORD` (Docker Hub credentials).
+* Navigate to **Settings → Secrets and variables → Actions**
+* Add `DOCKER_USERNAME` and `DOCKER_PASSWORD` (Docker Hub Access token).
 
 ### Commit and Push
 
