@@ -6,6 +6,22 @@
 
 ## Lab 9: Part A – Ubuntu/Linux
 
+### Create Docker Hub Account
+
+1. Go to [https://hub.docker.com/signup](https://hub.docker.com/signup)
+2. Enter **username, email, password** → click **Sign Up**
+3. Verify your email.
+
+### Create Repository
+
+1. Log in at [https://hub.docker.com](https://hub.docker.com)
+2. Click **Repositories → Create Repository**
+3. Enter repo **gitlab-ci-demo**, choose **Public/Private**
+4. Click **Create** 
+
+Would you like me to also give the **CLI commands** to create and push your first image to that repo?
+
+
 ### Create a new GitHub account:
 
 Go to <a href="https://github.com/join" target="_blank">https://github.com/join</a>.
