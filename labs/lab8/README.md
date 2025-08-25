@@ -81,7 +81,7 @@ docker rm pulled-nginx
 
 ---
 
-## 🖥️ Lab 8: Part B – Windows (Docker Desktop / PowerShell)
+## Lab 8: Part B – Windows (Docker Desktop / PowerShell)
 
 ### Create Sample Custom Image
 
