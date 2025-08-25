@@ -15,9 +15,6 @@
 Use this token instead of your password when logging in via CLI.
 
 ---
-
-## Part A – Ubuntu/Linux
-
 ### Create a Sample Custom Docker Image
 
 ```bash
@@ -78,47 +75,3 @@ You should see: **Hello from Docker Bootcamp Lab 8 **
 docker stop pulled-nginx
 docker rm pulled-nginx
 ```
-
----
-
-## Lab 8: Part B – Windows (Docker Desktop / PowerShell)
-
-### Create Sample Custom Image
-
-```powershell
-# Create Dockerfile
-echo FROM nginx:alpine > Dockerfile
-echo COPY index.html /usr/share/nginx/html/index.html >> Dockerfile
-
-# Create sample page
-echo "<h1>Hello from Docker Bootcamp Lab 8 </h1>" > index.html
-
-# Build image
-docker build -t custom-nginx:1.0 .
-```
-
-### Login with Token
-
-```powershell
-docker login -u yourdockerhubusername
-```
-
-Use your **token** when asked for password.
-
-### Same as Linux
-
-```powershell
-docker tag custom-nginx:1.0 yourdockerhubusername/custom-nginx:1.0
-docker push yourdockerhubusername/custom-nginx:1.0
-docker pull yourdockerhubusername/custom-nginx:1.0
-docker run -d -p 8080:80 --name pulled-nginx yourdockerhubusername/custom-nginx:1.0
-docker stop pulled-nginx
-docker rm pulled-nginx
-```
----
-
-## Expected Outcome
-
-* You created a **custom Nginx image** with your own webpage.
-* Successfully **pushed** it to Docker Hub.
-* **Pulled** and **ran** it on another machine.
