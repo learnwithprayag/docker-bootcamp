@@ -97,13 +97,12 @@ Participants will be able to:
 
 * Understand Docker fundamentals and architecture
 * Build and run containers and custom Docker images
-
-## Author & License
-
-### Author: Prayag Sangode
-### License: MIT License © 2025 Prayag Sangode
 * Use Docker volumes, networking, and multi-container deployments
 * Push/pull images to/from Docker Hub
 * Automate deployments using GitHub Actions
 * Follow best practices for container management and security
 
+## Author & License
+
+### Author: Prayag Sangode
+### License: MIT License © 2025 Prayag Sangode
