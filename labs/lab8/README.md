@@ -4,55 +4,75 @@
 
 ---
 
-## Lab 8: Part A – Ubuntu/Linux
+## Create Docker Hub Account & Token
 
-### Step 1: Create or Verify a Custom Docker Image
+1. Go to [https://hub.docker.com](https://hub.docker.com) → **Sign Up**
+2. After login, navigate to: **Account Settings → Security → New Access Token**
+
+   * Name it (e.g., `lab8-token`)
+   * Copy the generated token (you won’t see it again)
+
+Use this token instead of your password when logging in via CLI.
+
+---
+
+## Part A – Ubuntu/Linux
+
+### Create a Sample Custom Docker Image
 
 ```bash
-docker images
+# Create a simple Dockerfile
+mkdir lab8 && cd lab8
+cat > Dockerfile <<EOF
+FROM nginx:alpine
+COPY index.html /usr/share/nginx/html/index.html
+EOF
+
+# Create a sample webpage
+echo "<h1>Hello from Docker Bootcamp Lab 8 🚀</h1>" > index.html
+
+# Build image
+docker build -t custom-nginx:1.0 .
 ```
 
-* Ensure you have an image, e.g., `custom-nginx:1.0` from Lab 4.
-
-### Step 2: Login to Docker Hub
+### Login to Docker Hub (Using Access Token)
 
 ```bash
-docker login
+docker login -u yourdockerhubusername
 ```
 
-* Enter your Docker Hub **username** and **password**.
+*When prompted for password, paste the **token** created earlier.*
 
-### Step 3: Tag Your Image for Docker Hub
+### Tag Your Image
 
 ```bash
 docker tag custom-nginx:1.0 yourdockerhubusername/custom-nginx:1.0
 ```
 
-### Step 4: Push Image to Docker Hub
+### Push Image to Docker Hub
 
 ```bash
 docker push yourdockerhubusername/custom-nginx:1.0
 ```
 
-* Uploads your image to Docker Hub.
-
-### Step 5: Pull Image from Docker Hub
+### Pull Image from Docker Hub
 
 ```bash
 docker pull yourdockerhubusername/custom-nginx:1.0
 ```
 
-### Step 6: Run Container from Pulled Image
+### Run Container from Pulled Image
 
 ```bash
 docker run -d -p 8080:80 --name pulled-nginx yourdockerhubusername/custom-nginx:1.0
 ```
 
-### Step 7: Verify in Browser
+### Verify in Browser
 
-* Open `http://localhost:8080` to see your app.
+Open: `http://localhost:8080`
+You should see: **Hello from Docker Bootcamp Lab 8 🚀**
 
-### Step 8: Cleanup
+### Cleanup
 
 ```bash
 docker stop pulled-nginx
@@ -61,64 +81,44 @@ docker rm pulled-nginx
 
 ---
 
-## Lab 8: Part B – Windows (Using Docker Desktop / PowerShell)
+## 🖥️ Lab 8: Part B – Windows (Docker Desktop / PowerShell)
 
-### Step 1: Verify or Build a Custom Docker Image
-
-```powershell
-docker images
-```
-
-* Use `custom-nginx:1.0` or any other image you built.
-
-### Step 2: Login to Docker Hub
+### Create Sample Custom Image
 
 ```powershell
-docker login
+# Create Dockerfile
+echo FROM nginx:alpine > Dockerfile
+echo COPY index.html /usr/share/nginx/html/index.html >> Dockerfile
+
+# Create sample page
+echo "<h1>Hello from Docker Bootcamp Lab 8 🚀</h1>" > index.html
+
+# Build image
+docker build -t custom-nginx:1.0 .
 ```
 
-* Enter Docker Hub **username** and **password**.
+### Login with Token
 
-### Step 3: Tag Your Image
+```powershell
+docker login -u yourdockerhubusername
+```
+
+Use your **token** when asked for password.
+
+### Same as Linux
 
 ```powershell
 docker tag custom-nginx:1.0 yourdockerhubusername/custom-nginx:1.0
-```
-
-### Step 4: Push Image to Docker Hub
-
-```powershell
 docker push yourdockerhubusername/custom-nginx:1.0
-```
-
-### Step 5: Pull Image from Docker Hub
-
-```powershell
 docker pull yourdockerhubusername/custom-nginx:1.0
-```
-
-### Step 6: Run Container from Pulled Image
-
-```powershell
 docker run -d -p 8080:80 --name pulled-nginx yourdockerhubusername/custom-nginx:1.0
-```
-
-### Step 7: Verify in Browser
-
-* Open `http://localhost:8080` to see the app.
-
-### Step 8: Cleanup
-
-```powershell
 docker stop pulled-nginx
 docker rm pulled-nginx
 ```
-
 ---
 
-**Expected Outcome:**
+## Expected Outcome
 
-* Successfully push a local image to Docker Hub.
-* Pull the image from Docker Hub on any machine.
-* Run containers using images from Docker Hub.
-
+* You created a **custom Nginx image** with your own webpage.
+* Successfully **pushed** it to Docker Hub.
+* **Pulled** and **ran** it on another machine.
