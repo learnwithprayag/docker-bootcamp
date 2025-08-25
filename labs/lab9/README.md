@@ -6,6 +6,14 @@
 
 ## Lab 9: Part A – Ubuntu/Linux
 
+### Create a new GitHub account:
+
+Go to [https://github.com/join](https://github.com/join).
+Enter your **username**, **email address**, and **password**.
+Verify your email through the confirmation link sent by GitHub.
+Choose a plan (Free is enough to start).
+Set up your profile and you’re ready to create repositories. 
+
 ### Create GitHub Repository
 
 * Go to GitHub and create a new repository (e.g., `docker-ci-cd-lab`).
