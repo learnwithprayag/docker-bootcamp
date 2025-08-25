@@ -4,8 +4,6 @@
 
 ---
 
-## Lab 5: Part A – Ubuntu/Linux
-
 ### Create a Docker Volume
 
 ```bash
