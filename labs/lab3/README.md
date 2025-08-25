@@ -74,6 +74,11 @@ docker logs test-container
 docker inspect test-container
 ```
 
+### Enter inside the container
+```bash
+docker exec -it test-container /bin/bash
+```
+
 ### Remove the Container
 
 ```bash
