@@ -29,7 +29,7 @@ COPY index.html /usr/share/nginx/html/index.html
 EOF
 
 # Create a sample webpage
-echo "<h1>Hello from Docker Bootcamp Lab 8 🚀</h1>" > index.html
+echo "<h1>Hello from Docker Bootcamp Lab 8 </h1>" > index.html
 
 # Build image
 docker build -t custom-nginx:1.0 .
@@ -91,7 +91,7 @@ echo FROM nginx:alpine > Dockerfile
 echo COPY index.html /usr/share/nginx/html/index.html >> Dockerfile
 
 # Create sample page
-echo "<h1>Hello from Docker Bootcamp Lab 8 🚀</h1>" > index.html
+echo "<h1>Hello from Docker Bootcamp Lab 8 </h1>" > index.html
 
 # Build image
 docker build -t custom-nginx:1.0 .
