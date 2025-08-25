@@ -4,8 +4,6 @@
 
 ---
 
-## Lab 4: Part A – Ubuntu/Linux
-
 ### Create a Project Directory
 
 ```bash
@@ -74,70 +72,4 @@ docker stop custom-nginx-container
 docker rm custom-nginx-container
 ```
 
----
-
-## Lab 4: Part B – Windows (Using Docker Desktop)
-
-### Create Project Folder
-
-```powershell
-mkdir C:\docker-labs\lab4
-cd C:\docker-labs\lab4
-```
-
-### Create Sample HTML File
-
-```powershell
-echo "<h1>Hello from Custom Docker Image</h1>" > index.html
-```
-
-### Create Dockerfile
-
-```powershell
-cat > Dockerfile <<EOF
-FROM nginx:latest
-LABEL maintainer="yourname@example.com"
-COPY index.html /usr/share/nginx/html/index.html
-ENV APP_ENV=development
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
-EOF
-```
-
-### Build the Docker Image
-
-```powershell
-docker build -t custom-nginx:1.0 .
-```
-
-### List Docker Images
-
-```powershell
-docker images
-```
-
-### Run the Custom Image
-
-```powershell
-docker run -d -p 8080:80 --name custom-nginx-container custom-nginx:1.0
-```
-
-### Verify in Browser
-
-* Open `http://localhost:8080` and check the custom HTML page.
-
-### Stop and Remove Container
-
-```powershell
-docker stop custom-nginx-container
-docker rm custom-nginx-container
-```
-
----
-
-Expected Outcome:
-
-* Successfully build a Docker image from a Dockerfile.
-* Run a container based on your custom image.
-* See the custom HTML content in the browser.
 
