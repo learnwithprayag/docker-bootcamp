@@ -11,7 +11,6 @@ This lab includes a **Flask web app**, **Redis cache**, and **PostgreSQL databas
 - Data persistence with PostgreSQL
 - Redis caching
 - Hands-on Dockerfile and Docker Compose usage
-- Compatible with Linux, WSL, and Windows PowerShell/CMD
 
 
 ### Create directories
