@@ -25,6 +25,8 @@ Set up your profile and you’re ready to create repositories.
 ### Clone Repository Locally
 
 ```bash
+git config --global user.name "Your name"
+git config --global user.email your-email-address
 git clone https://github.com/yourusername/docker-ci-lab.git
 cd docker-ci-lab
 ```
