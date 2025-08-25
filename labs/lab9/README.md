@@ -4,8 +4,6 @@
 
 ---
 
-## Lab 9: Part A – Ubuntu/Linux
-
 ### Create Docker Hub Account
 
 1. Go to [https://hub.docker.com/signup](https://hub.docker.com/signup)
@@ -16,7 +14,7 @@
 
 1. Log in at [https://hub.docker.com](https://hub.docker.com)
 2. Click **Repositories → Create Repository**
-3. Enter repo **gitlab-ci-demo**, choose **Public/Private**
+3. Enter repo **gitlab-ci-cd-demo**, choose **Public/Private**
 4. Click **Create** 
 
 Would you like me to also give the **CLI commands** to create and push your first image to that repo?
@@ -36,15 +34,15 @@ Set up your profile and you’re ready to create repositories.
 
 ### Create GitHub Repository
 
-* Go to GitHub and create a new repository (e.g., `docker-ci-lab`).
+* Go to GitHub and create a new repository (e.g., `docker-ci-cd-lab`).
 
 ### Clone Repository Locally
 
 ```bash
 git config --global user.name "Your name"
 git config --global user.email your-email-address
-git clone https://github.com/yourusername/docker-ci-lab.git
-cd docker-ci-lab
+git clone https://github.com/yourusername/docker-ci-cd-lab.git
+cd docker-ci-cd-lab
 ```
 
 ### Add a Sample Docker Project
@@ -52,7 +50,7 @@ cd docker-ci-lab
 * Example folder structure:
 
 ```
-docker-ci-lab/
+docker-ci-cd-lab/
  ├── index.html
  ├── Dockerfile
 ```
@@ -60,7 +58,7 @@ docker-ci-lab/
 * Sample `index.html`:
 
 ```html
-<h1>Hello from GitHub Actions CI</h1>
+<h1>Hello from GitHub Actions CI CD</h1>
 ```
 
 * Sample `Dockerfile`:
@@ -76,7 +74,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ```bash
 mkdir -p .github/workflows
-cat > .github/workflows/docker-ci.yml <<EOF
+cat > .github/workflows/docker-ci-cd.yml <<EOF
 name: Docker CI
 
 on:
@@ -101,17 +99,25 @@ jobs:
         password: \${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build Docker image
-      run: docker build -t yourdockerhubusername/gitlab-ci-demo:latest .
+      run: docker build -t yourdockerhubusername/gitlab-ci-cd-demo:latest .
 
     - name: Push Docker image
-      run: docker push yourdockerhubusername/gitlab-ci-demo:latest
+      run: docker push yourdockerhubusername/gitlab-ci-cd-demo:latest
 EOF
 ```
+### Create ssh key pair
+```bash
+ssh-keygen -t rsa -b 4096 -C "docker-ci-cd-deploy" -f docker_ci_cd_key
+```
+### Manually append docker_ci_cd_key.pub content to ~/.ssh/authorized_keys on EC2
 
 ### Set Secrets in GitHub
 
 * Navigate to **Settings → Secrets and variables → Actions**
 * Add `DOCKER_USERNAME` and `DOCKER_PASSWORD` (Docker Hub Access token).
+* EC2_HOST → EC2 public IP
+* EC2_USER → EC2 user (e.g., ubuntu)
+* EC2_SSH_KEY → private key content (docker_ci_key)
 
 ### Commit and Push
 
@@ -125,73 +131,6 @@ git push origin main
 
 * Go to **Actions** tab in GitHub repo.
 * Workflow runs automatically on push and builds/pushes Docker image.
-
----
-
-## Lab 9: Part B – Windows (Using Docker Desktop / PowerShell)
-
-### Clone GitHub Repository
-
-```powershell
-git clone https://github.com/yourusername/docker-ci-lab.git
-cd docker-ci-lab
-```
-
-### Add Sample Project (index.html + Dockerfile)
-
-* Same content as Part A.
-
-### Create GitHub Actions Workflow
-
-```powershell
-mkdir .github\workflows -Force
-cat > .github\workflows\docker-ci.yml <<EOF
-name: Docker CI/CD
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v2
-
-    - name: Log in to Docker Hub
-      uses: docker/login-action@v2
-      with:
-        username: \${{ secrets.DOCKER_USERNAME }}
-        password: \${{ secrets.DOCKER_PASSWORD }}
-
-    - name: Build Docker image
-      run: docker build -t yourdockerhubusername/gitlab-ci-demo:latest .
-
-    - name: Push Docker image
-      run: docker push yourdockerhubusername/gitlab-ci-demo:latest
-EOF
-```
-
-### Set Secrets in GitHub
-
-* Add `DOCKER_USERNAME` and `DOCKER_PASSWORD` under repository **Settings → Secrets → Actions**.
-
-### Commit and Push
-
-```powershell
-git add .
-git commit -m "Add GitHub Actions workflow for Docker CI"
-git push origin main
-```
-
-### Verify Workflow
-
-* Check **Actions** tab in GitHub. Workflow will build and push Docker image automatically.
 
 ---
 
