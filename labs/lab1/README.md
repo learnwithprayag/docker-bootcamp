@@ -86,12 +86,12 @@ docker images
 
 ## Lab 1: Part B – Installation and Hello World on Windows
 
-### Step 1: Install Docker Desktop
+### Install Docker Desktop
 
 * Download and install [Docker Desktop for Windows](https://www.docker.com/products/docker-desktop/).
 * Ensure Docker Desktop is **running**.
 
-### Step 2: Verify Installation
+### Verify Installation
 
 Open **PowerShell** or **Command Prompt**:
 
@@ -99,25 +99,25 @@ Open **PowerShell** or **Command Prompt**:
 docker --version
 ```
 
-### Step 3: Run Hello World Container
+### Run Hello World Container
 
 ```powershell
 docker run hello-world
 ```
 
-### Step 4: Check Running Containers
+### Check Running Containers
 
 ```powershell
 docker ps -a
 ```
 
-### Step 5: Remove the Container
+### Remove the Container
 
 ```powershell
 docker rm <container_id>
 ```
 
-### Step 6 (Optional): Check Downloaded Images
+### Check Downloaded Images
 
 ```powershell
 docker images
