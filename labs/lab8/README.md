@@ -22,7 +22,7 @@ Use this token instead of your password when logging in via CLI.
 
 ```bash
 # Create a simple Dockerfile
-mkdir lab8 && cd lab8
+mkdir ~/docker-labs/lab8 && cd ~/docker-labs/lab8
 cat > Dockerfile <<EOF
 FROM nginx:alpine
 COPY index.html /usr/share/nginx/html/index.html
