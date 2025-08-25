@@ -7,7 +7,7 @@
 ## Create Docker Hub Account & Token
 
 1. Go to [https://hub.docker.com](https://hub.docker.com) → **Sign Up**
-2. After login, navigate to: **Account Settings → Security → New Access Token**
+2. After login, navigate to: **Account Settings → Settings → Personal access tokens**
 
    * Name it (e.g., `lab8-token`)
    * Copy the generated token (you won’t see it again)
