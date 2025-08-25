@@ -9,9 +9,13 @@
 ### Create a new GitHub account:
 
 Go to <a href="https://github.com/join" target="_blank">https://github.com/join</a>.
+
 Enter your **username**, **email address**, and **password**.
+
 Verify your email through the confirmation link sent by GitHub.
+
 Choose a plan (Free is enough to start).
+
 Set up your profile and you’re ready to create repositories. 
 
 ### Create GitHub Repository
