@@ -88,21 +88,11 @@ docker ps
 * Nginx: `http://localhost:8080`
 * Apache: `http://localhost:8081`
 
-### Scale a Service (Optional)
-
-```bash
-docker compose up -d --scale web=2
-docker ps
-```
-
-* Launches 2 instances of the web service.
-
 ### Stop and Remove Containers
 
 ```bash
 docker compose down
 ```
-
 ---
 
 ## Lab 7: Part B – Windows (Using Docker Desktop / PowerShell)
@@ -156,19 +146,11 @@ docker ps
 * Nginx: `http://localhost:8080`
 * Apache: `http://localhost:8081`
 
-### Scale a Service (Optional)
-
-```powershell
-docker-compose up -d --scale web=2
-docker ps
-```
-
 ### Stop and Remove Containers
 
 ```powershell
 docker-compose down
 ```
-
 ---
 
 **Expected Outcome:**
