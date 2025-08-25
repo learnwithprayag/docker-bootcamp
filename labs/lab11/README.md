@@ -16,11 +16,13 @@ This lab includes a **Flask web app**, **Redis cache**, and **PostgreSQL databas
 
 ---
 
+### Create directories
 ```bash
-# 1. Create directories
-mkdir -p docker-capstone/{app,db,redis}
+mkdir -p ~/docker-labs/docker-capstone/{app,db,redis}
+```
 
-# 2. Create Flask app
+### Create Flask app
+```bash
 cat >> docker-capstone/app/app.py << 'EOF'
 from flask import Flask
 import redis
@@ -37,14 +39,18 @@ def hello():
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
 EOF
+```
 
-# 3. Create requirements.txt
+### Create requirements.txt
+```bash
 cat >> docker-capstone/app/requirements.txt << 'EOF'
 Flask==2.3.2
 redis==5.2.0
 EOF
+```
 
-# 4. Create Dockerfile
+### Create Dockerfile
+```bash
 cat >> docker-capstone/app/Dockerfile << 'EOF'
 FROM python:3.11-slim
 WORKDIR /app
@@ -53,8 +59,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 CMD ["python", "app.py"]
 EOF
+```
 
-# 5. Create Docker Compose file
+### Create Docker Compose file
+```bash
 cat >> docker-capstone/docker-compose.yml << 'EOF'
 version: "3.9"
 services:
@@ -82,13 +90,14 @@ services:
 volumes:
   db_data:
 EOF
+```
 
-# 6. Deploy the application
+### Deploy the application
+```bash
 cd docker-capstone
 docker compose up -d --build
-````
+```
 
----
 
 ### Test the Flask Web App
 
@@ -108,7 +117,6 @@ Hello World! This page has been viewed 1 times.
 
 Each refresh or request increments the count.
 
----
 
 ###  Test Redis (cannot use curl)
 
@@ -134,7 +142,6 @@ docker exec -it docker-capstone-web-1 bash
  PGPASSWORD=capstone123 psql -h db -U capstone -d capstone_db -c "\l"
 
 ```
----
 
 ## Notes
 
