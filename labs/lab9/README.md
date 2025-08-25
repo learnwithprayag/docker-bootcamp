@@ -20,12 +20,12 @@ Set up your profile and you’re ready to create repositories.
 
 ### Create GitHub Repository
 
-* Go to GitHub and create a new repository (e.g., `docker-ci-cd-lab`).
+* Go to GitHub and create a new repository (e.g., `docker-ci-lab`).
 
 ### Clone Repository Locally
 
 ```bash
-git clone https://github.com/yourusername/docker-ci-cd-lab.git
+git clone https://github.com/yourusername/docker-ci-lab.git
 cd docker-ci-cd-lab
 ```
 
@@ -34,7 +34,7 @@ cd docker-ci-cd-lab
 * Example folder structure:
 
 ```
-docker-ci-cd-lab/
+docker-ci-lab/
  ├── index.html
  ├── Dockerfile
 ```
@@ -42,7 +42,7 @@ docker-ci-cd-lab/
 * Sample `index.html`:
 
 ```html
-<h1>Hello from GitHub Actions CI/CD</h1>
+<h1>Hello from GitHub Actions CI</h1>
 ```
 
 * Sample `Dockerfile`:
@@ -59,7 +59,7 @@ CMD ["nginx", "-g", "daemon off;"]
 ```bash
 mkdir -p .github/workflows
 cat > .github/workflows/docker-ci.yml <<EOF
-name: Docker CI/CD
+name: Docker CI
 
 on:
   push:
@@ -99,7 +99,7 @@ EOF
 
 ```bash
 git add .
-git commit -m "Add GitHub Actions workflow for Docker CI/CD"
+git commit -m "Add GitHub Actions workflow for Docker CI"
 git push origin main
 ```
 
@@ -115,8 +115,8 @@ git push origin main
 ### Clone GitHub Repository
 
 ```powershell
-git clone https://github.com/yourusername/docker-ci-cd-lab.git
-cd docker-ci-cd-lab
+git clone https://github.com/yourusername/docker-ci-lab.git
+cd docker-ci-lab
 ```
 
 ### Add Sample Project (index.html + Dockerfile)
@@ -167,7 +167,7 @@ EOF
 
 ```powershell
 git add .
-git commit -m "Add GitHub Actions workflow for Docker CI/CD"
+git commit -m "Add GitHub Actions workflow for Docker CI"
 git push origin main
 ```
 
@@ -179,7 +179,7 @@ git push origin main
 
 **Expected Outcome:**
 
-* CI/CD pipeline triggers on every push to `main`.
+* CI pipeline triggers on every push to `main`.
 * Docker image is built and pushed to Docker Hub automatically.
 * Demonstrates automated Docker deployment using GitHub Actions.
 
