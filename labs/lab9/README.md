@@ -6,18 +6,18 @@
 
 ## Lab 9: Part A – Ubuntu/Linux
 
-### Step 1: Create GitHub Repository
+### Create GitHub Repository
 
 * Go to GitHub and create a new repository (e.g., `docker-ci-cd-lab`).
 
-### Step 2: Clone Repository Locally
+### Clone Repository Locally
 
 ```bash
 git clone https://github.com/yourusername/docker-ci-cd-lab.git
 cd docker-ci-cd-lab
 ```
 
-### Step 3: Add a Sample Docker Project
+### Add a Sample Docker Project
 
 * Example folder structure:
 
@@ -42,7 +42,7 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-### Step 4: Create GitHub Actions Workflow
+### Create GitHub Actions Workflow
 
 ```bash
 mkdir -p .github/workflows
@@ -78,12 +78,12 @@ jobs:
 EOF
 ```
 
-### Step 5: Set Secrets in GitHub
+### Set Secrets in GitHub
 
 * Navigate to **Settings → Secrets → Actions**
 * Add `DOCKER_USERNAME` and `DOCKER_PASSWORD` (Docker Hub credentials).
 
-### Step 6: Commit and Push
+### Commit and Push
 
 ```bash
 git add .
@@ -91,7 +91,7 @@ git commit -m "Add GitHub Actions workflow for Docker CI/CD"
 git push origin main
 ```
 
-### Step 7: Verify Workflow
+### Verify Workflow
 
 * Go to **Actions** tab in GitHub repo.
 * Workflow runs automatically on push and builds/pushes Docker image.
@@ -100,18 +100,18 @@ git push origin main
 
 ## Lab 9: Part B – Windows (Using Docker Desktop / PowerShell)
 
-### Step 1: Clone GitHub Repository
+### Clone GitHub Repository
 
 ```powershell
 git clone https://github.com/yourusername/docker-ci-cd-lab.git
 cd docker-ci-cd-lab
 ```
 
-### Step 2: Add Sample Project (index.html + Dockerfile)
+### Add Sample Project (index.html + Dockerfile)
 
 * Same content as Part A.
 
-### Step 3: Create GitHub Actions Workflow
+### Create GitHub Actions Workflow
 
 ```powershell
 mkdir .github\workflows -Force
@@ -147,11 +147,11 @@ jobs:
 EOF
 ```
 
-### Step 4: Set Secrets in GitHub
+### Set Secrets in GitHub
 
 * Add `DOCKER_USERNAME` and `DOCKER_PASSWORD` under repository **Settings → Secrets → Actions**.
 
-### Step 5: Commit and Push
+### Commit and Push
 
 ```powershell
 git add .
@@ -159,7 +159,7 @@ git commit -m "Add GitHub Actions workflow for Docker CI/CD"
 git push origin main
 ```
 
-### Step 6: Verify Workflow
+### Verify Workflow
 
 * Check **Actions** tab in GitHub. Workflow will build and push Docker image automatically.
 
