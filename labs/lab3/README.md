@@ -6,14 +6,14 @@
 
 ## Lab 3: Part A – Ubuntu/Linux
 
-### Step 1: Verify Docker Installation
+### Verify Docker Installation
 
 ```bash
 docker --version
 sudo systemctl status docker
 ```
 
-### Step 2: Run a Sample Container
+### Run a Sample Container
 
 ```bash
 docker run -d --name test-container nginx
@@ -21,7 +21,7 @@ docker run -d --name test-container nginx
 
 * Starts an Nginx container in detached mode.
 
-### Step 3: Check Running Containers
+### Check Running Containers
 
 ```bash
 docker ps
@@ -29,7 +29,7 @@ docker ps
 
 * Lists all running containers.
 
-### Step 4: Pause the Container
+### Pause the Container
 
 ```bash
 docker pause test-container
@@ -37,7 +37,7 @@ docker pause test-container
 
 * Temporarily suspends container processes.
 
-### Step 5: Unpause the Container
+### Unpause the Container
 
 ```bash
 docker unpause test-container
@@ -45,7 +45,7 @@ docker unpause test-container
 
 * Resumes container processes.
 
-### Step 6: Stop the Container
+### Stop the Container
 
 ```bash
 docker stop test-container
@@ -53,7 +53,7 @@ docker stop test-container
 
 * Gracefully stops the container.
 
-### Step 7: Restart the Container
+### Restart the Container
 
 ```bash
 docker start test-container
@@ -62,19 +62,19 @@ docker restart test-container
 
 * Restarts the container if needed.
 
-### Step 8: Inspect Container Logs
+### Inspect Container Logs
 
 ```bash
 docker logs test-container
 ```
 
-### Step 9: Inspect Container Metadata
+### Inspect Container Metadata
 
 ```bash
 docker inspect test-container
 ```
 
-### Step 10: Remove the Container
+### Remove the Container
 
 ```bash
 docker rm test-container
@@ -84,7 +84,7 @@ docker rm test-container
 
 ## Lab 3: Part B – Windows (Using Docker Desktop)
 
-### Step 1: Verify Docker Installation
+### Verify Docker Installation
 
 Open **PowerShell**:
 
@@ -92,56 +92,56 @@ Open **PowerShell**:
 docker --version
 ```
 
-### Step 2: Run a Sample Container
+### Run a Sample Container
 
 ```powershell
 docker run -d --name test-container nginx
 ```
 
-### Step 3: Check Running Containers
+### Check Running Containers
 
 ```powershell
 docker ps
 ```
 
-### Step 4: Pause the Container
+### Pause the Container
 
 ```powershell
 docker pause test-container
 ```
 
-### Step 5: Unpause the Container
+### Unpause the Container
 
 ```powershell
 docker unpause test-container
 ```
 
-### Step 6: Stop the Container
+### Stop the Container
 
 ```powershell
 docker stop test-container
 ```
 
-### Step 7: Restart the Container
+### Restart the Container
 
 ```powershell
 docker start test-container
 docker restart test-container
 ```
 
-### Step 8: Inspect Container Logs
+### Inspect Container Logs
 
 ```powershell
 docker logs test-container
 ```
 
-### Step 9: Inspect Container Metadata
+### Inspect Container Metadata
 
 ```powershell
 docker inspect test-container
 ```
 
-### Step 10: Remove the Container
+### Remove the Container
 
 ```powershell
 docker rm test-container
