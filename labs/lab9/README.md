@@ -19,7 +19,6 @@
 
 Would you like me to also give the **CLI commands** to create and push your first image to that repo?
 
-
 ### Create a new GitHub account:
 
 Go to <a href="https://github.com/join" target="_blank">https://github.com/join</a>.
@@ -109,15 +108,16 @@ EOF
 ```bash
 ssh-keygen -t rsa -b 4096 -C "docker-ci-cd-deploy" -f docker_ci_cd_key
 ```
-### Manually append docker_ci_cd_key.pub content to ~/.ssh/authorized_keys on EC2
+
+Manually append docker_ci_cd_key.pub content to ~/.ssh/authorized_keys on EC2
 
 ### Set Secrets in GitHub
 
 * Navigate to **Settings → Secrets and variables → Actions**
 * Add `DOCKER_USERNAME` and `DOCKER_PASSWORD` (Docker Hub Access token).
-* EC2_HOST → EC2 public IP
-* EC2_USER → EC2 user (e.g., ubuntu)
-* EC2_SSH_KEY → private key content (docker_ci_key)
+* Add `EC2_HOST` → EC2 public IP
+* Add `EC2_USER` → EC2 user (e.g., ubuntu)
+* Add  `EC2_SSH_KEY` → private key content (docker_ci_key)
 
 ### Commit and Push
 
@@ -132,11 +132,4 @@ git push origin main
 * Go to **Actions** tab in GitHub repo.
 * Workflow runs automatically on push and builds/pushes Docker image.
 
----
-
-**Expected Outcome:**
-
-* CI pipeline triggers on every push to `main`.
-* Docker image is built and pushed to Docker Hub automatically.
-* Demonstrates automated Docker deployment using GitHub Actions.
 
