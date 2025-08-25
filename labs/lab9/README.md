@@ -26,7 +26,7 @@ Set up your profile and you’re ready to create repositories.
 
 ```bash
 git clone https://github.com/yourusername/docker-ci-lab.git
-cd docker-ci-cd-lab
+cd docker-ci-lab
 ```
 
 ### Add a Sample Docker Project
