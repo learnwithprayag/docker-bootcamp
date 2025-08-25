@@ -4,8 +4,6 @@
 
 ---
 
-## Lab 3: Part A – Ubuntu/Linux
-
 ### Verify Docker Installation
 
 ```bash
