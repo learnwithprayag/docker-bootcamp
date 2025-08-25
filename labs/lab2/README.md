@@ -4,8 +4,6 @@
 
 ---
 
-## Lab 2: Part A – Ubuntu/Linux (Official Method) 
-
 ### Install Docker (Official Method) - (Skip this step, if already installed)
 
 ```bash
