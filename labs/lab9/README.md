@@ -75,7 +75,7 @@ CMD ["nginx", "-g", "daemon off;"]
 ```bash
 mkdir -p .github/workflows
 cat > .github/workflows/docker-ci-cd.yml <<EOF
-name: Docker CI
+name: Docker CI CD
 
 on:
   push:
