@@ -3,9 +3,6 @@
 **Objective:** Learn to define multi-container applications using Docker Compose and deploy them together.
 
 ---
-
-## Lab 7: Part A – Ubuntu/Linux
-
 ### Install Docker Compose (if not installed). While installing docker using offical method we have already installed docker compose as well.
 
 ## Official Method (Recommended by Docker) (Skip this step if its already installed)
@@ -93,65 +90,8 @@ docker ps
 ```bash
 docker compose down
 ```
----
 
-## Lab 7: Part B – Windows (Using Docker Desktop / PowerShell)
 
-### Install Docker Compose
-
-* Included with Docker Desktop. Verify:
-
-```powershell
-docker-compose --version
-```
-
-### Create Project Directory
-
-```powershell
-mkdir C:\docker-labs\lab7
-cd C:\docker-labs\lab7
-```
-
-### Create `docker-compose.yml`
-
-```powershell
-cat > docker-compose.yml <<EOF
-version: '3'
-services:
-  web:
-    image: nginx
-    ports:
-      - "8080:80"
-  app:
-    image: httpd
-    ports:
-      - "8081:80"
-EOF
-```
-
-### Deploy the Multi-Container App
-
-```powershell
-docker-compose up -d
-```
-
-### Verify Running Containers
-
-```powershell
-docker ps
-```
-
-### Test in Browser
-
-* Nginx: `http://localhost:8080`
-* Apache: `http://localhost:8081`
-
-### Stop and Remove Containers
-
-```powershell
-docker-compose down
-```
----
 
 **Expected Outcome:**
 
