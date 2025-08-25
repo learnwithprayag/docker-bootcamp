@@ -6,20 +6,20 @@
 
 ## Lab 4: Part A – Ubuntu/Linux
 
-### Step 1: Create a Project Directory
+### Create a Project Directory
 
 ```bash
 mkdir -p ~/docker-labs/lab4
 cd ~/docker-labs/lab4
 ```
 
-### Step 2: Create a Sample HTML File
+### Create a Sample HTML File
 
 ```bash
 echo "<h1>Hello from Custom Docker Image</h1>" > index.html
 ```
 
-### Step 3: Create a Dockerfile
+### Create a Dockerfile
 
 ```bash
 cat > Dockerfile <<EOF
@@ -43,13 +43,13 @@ CMD ["nginx", "-g", "daemon off;"]
 EOF
 ```
 
-### Step 4: Build the Docker Image
+### Build the Docker Image
 
 ```bash
 docker build -t custom-nginx:1.0 .
 ```
 
-### Step 5: List Docker Images
+### List Docker Images
 
 ```bash
 docker images
@@ -57,17 +57,17 @@ docker images
 
 * Verify your `custom-nginx:1.0` image is present.
 
-### Step 6: Run the Custom Image
+### Run the Custom Image
 
 ```bash
 docker run -d -p 8080:80 --name custom-nginx-container custom-nginx:1.0
 ```
 
-### Step 7: Verify in Browser
+### Verify in Browser
 
 * Open `http://localhost:8080` and check the custom HTML page.
 
-### Step 8: Stop and Remove Container
+### Stop and Remove Container
 
 ```bash
 docker stop custom-nginx-container
@@ -78,20 +78,20 @@ docker rm custom-nginx-container
 
 ## Lab 4: Part B – Windows (Using Docker Desktop)
 
-### Step 1: Create Project Folder
+### Create Project Folder
 
 ```powershell
 mkdir C:\docker-labs\lab4
 cd C:\docker-labs\lab4
 ```
 
-### Step 2: Create Sample HTML File
+### Create Sample HTML File
 
 ```powershell
 echo "<h1>Hello from Custom Docker Image</h1>" > index.html
 ```
 
-### Step 3: Create Dockerfile
+### Create Dockerfile
 
 ```powershell
 cat > Dockerfile <<EOF
@@ -104,29 +104,29 @@ CMD ["nginx", "-g", "daemon off;"]
 EOF
 ```
 
-### Step 4: Build the Docker Image
+### Build the Docker Image
 
 ```powershell
 docker build -t custom-nginx:1.0 .
 ```
 
-### Step 5: List Docker Images
+### List Docker Images
 
 ```powershell
 docker images
 ```
 
-### Step 6: Run the Custom Image
+### Run the Custom Image
 
 ```powershell
 docker run -d -p 8080:80 --name custom-nginx-container custom-nginx:1.0
 ```
 
-### Step 7: Verify in Browser
+### Verify in Browser
 
 * Open `http://localhost:8080` and check the custom HTML page.
 
-### Step 8: Stop and Remove Container
+### Stop and Remove Container
 
 ```powershell
 docker stop custom-nginx-container
