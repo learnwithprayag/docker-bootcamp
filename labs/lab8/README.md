@@ -70,7 +70,7 @@ docker run -d -p 8080:80 --name pulled-nginx yourdockerhubusername/custom-nginx:
 ### Verify in Browser
 
 Open: `http://localhost:8080`
-You should see: **Hello from Docker Bootcamp Lab 8 🚀**
+You should see: **Hello from Docker Bootcamp Lab 8 **
 
 ### Cleanup
 
