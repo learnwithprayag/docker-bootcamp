@@ -104,6 +104,6 @@ Participants will be able to:
 
 ## Author & License
 
-**Author:** Prayag Sangode
+**Author:** [Prayag Sangode](https://github.com/prayag-sangode)
 **License:** [MIT License](https://opensource.org/licenses/MIT)
 
