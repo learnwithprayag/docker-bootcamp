@@ -88,6 +88,54 @@ cd docker-capstone
 docker compose up -d --build
 ````
 
+---
+
+### Test the Flask Web App
+
+```bash
+# From host
+curl http://localhost:5000
+
+# From inside the web container
+docker exec -it docker-capstone-web-1 curl http://localhost:5000
+```
+
+**Expected output:**
+
+```
+Hello World! This page has been viewed 1 times.
+```
+
+Each refresh or request increments the count.
+
+---
+
+###  Test Redis (cannot use curl)
+
+```bash
+# From host
+docker exec -it docker-capstone-redis-1 redis-cli ping
+# Output: PONG
+
+# From web container (optional)
+docker exec -it docker-capstone-web-1 python3 -c "import redis; r=redis.Redis(host='redis'); print(r.ping())"
+# Output: True
+```
+
+### Test PostgreSQL (cannot use curl)
+
+```bash
+# From host
+docker exec -it docker-capstone-db-1 psql -U capstone -d capstone_db -c "\l"
+
+# From web container (optional, requires installing client)
+docker exec -it docker-capstone-web-1 bash
+ apt update && apt install -y postgresql-client
+ PGPASSWORD=capstone123 psql -h db -U capstone -d capstone_db -c "\l"
+
+```
+---
+
 ## Notes
 
 * This lab provides hands-on experience with:
