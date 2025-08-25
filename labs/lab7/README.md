@@ -6,7 +6,36 @@
 
 ## Lab 7: Part A – Ubuntu/Linux
 
-### Step 1: Install Docker Compose (if not installed)
+### Install Docker Compose (if not installed). While installing docker using offical method we have already installed docker compose as well.
+
+## Official Method (Recommended by Docker) (Skip this step if its already installed)
+
+This installs the latest **Docker Compose plugin** as well.
+
+```bash
+sudo apt update
+sudo apt install -y apt-transport-https ca-certificates curl software-properties-common gnupg lsb-release
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker $USER
+exit
+```
+
+This ensures you always get the **latest stable release** from GitHub.
+
+Check docker and docker compose version
+```bash
+docker version
+docker compose version
+```
+
+---
+
+## APT Package Method (Simpler but may not be latest)
 
 ```bash
 sudo apt update
@@ -14,14 +43,16 @@ sudo apt install -y docker-compose
 docker-compose --version
 ```
 
-### Step 2: Create Project Directory
+Drawback: This version may **lag behind** the latest official release in Ubuntu repositories.
+
+### Create Project Directory
 
 ```bash
 mkdir -p ~/docker-labs/lab7
 cd ~/docker-labs/lab7
 ```
 
-### Step 3: Create `docker-compose.yml`
+### Create `docker-compose.yml`
 
 ```bash
 cat > docker-compose.yml <<EOF
@@ -38,45 +69,45 @@ services:
 EOF
 ```
 
-### Step 4: Deploy the Multi-Container App
+### Deploy the Multi-Container App
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 * Deploys both Nginx and Apache containers together.
 
-### Step 5: Verify Running Containers
+### Verify Running Containers
 
 ```bash
 docker ps
 ```
 
-### Step 6: Test in Browser
+### Test in Browser
 
 * Nginx: `http://localhost:8080`
 * Apache: `http://localhost:8081`
 
-### Step 7: Scale a Service (Optional)
+### Scale a Service (Optional)
 
 ```bash
-docker-compose up -d --scale web=2
+docker compose up -d --scale web=2
 docker ps
 ```
 
 * Launches 2 instances of the web service.
 
-### Step 8: Stop and Remove Containers
+### Stop and Remove Containers
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
 ---
 
 ## Lab 7: Part B – Windows (Using Docker Desktop / PowerShell)
 
-### Step 1: Install Docker Compose
+### Install Docker Compose
 
 * Included with Docker Desktop. Verify:
 
@@ -84,14 +115,14 @@ docker-compose down
 docker-compose --version
 ```
 
-### Step 2: Create Project Directory
+### Create Project Directory
 
 ```powershell
 mkdir C:\docker-labs\lab7
 cd C:\docker-labs\lab7
 ```
 
-### Step 3: Create `docker-compose.yml`
+### Create `docker-compose.yml`
 
 ```powershell
 cat > docker-compose.yml <<EOF
@@ -108,31 +139,31 @@ services:
 EOF
 ```
 
-### Step 4: Deploy the Multi-Container App
+### Deploy the Multi-Container App
 
 ```powershell
 docker-compose up -d
 ```
 
-### Step 5: Verify Running Containers
+### Verify Running Containers
 
 ```powershell
 docker ps
 ```
 
-### Step 6: Test in Browser
+### Test in Browser
 
 * Nginx: `http://localhost:8080`
 * Apache: `http://localhost:8081`
 
-### Step 7: Scale a Service (Optional)
+### Scale a Service (Optional)
 
 ```powershell
 docker-compose up -d --scale web=2
 docker ps
 ```
 
-### Step 8: Stop and Remove Containers
+### Stop and Remove Containers
 
 ```powershell
 docker-compose down
