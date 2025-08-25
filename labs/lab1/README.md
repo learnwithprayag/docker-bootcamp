@@ -82,46 +82,6 @@ docker images
 
 * Message: `"Hello from Docker! This message shows your installation appears to be working correctly."`
 
----
-
-## Lab 1: Part B – Installation and Hello World on Windows
-
-### Install Docker Desktop
-
-* Download and install [Docker Desktop for Windows](https://www.docker.com/products/docker-desktop/).
-* Ensure Docker Desktop is **running**.
-
-### Verify Installation
-
-Open **PowerShell** or **Command Prompt**:
-
-```powershell
-docker --version
-```
-
-### Run Hello World Container
-
-```powershell
-docker run hello-world
-```
-
-### Check Running Containers
-
-```powershell
-docker ps -a
-```
-
-### Remove the Container
-
-```powershell
-docker rm <container_id>
-```
-
-### Check Downloaded Images
-
-```powershell
-docker images
-```
 
 **Expected Outcome:**
 
