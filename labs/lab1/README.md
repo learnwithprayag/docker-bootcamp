@@ -4,8 +4,6 @@
 
 ---
 
-## Lab 1: Part A – Installation and Hello World on Ubuntu/Linux (Official Method)
-
 ### Update Package Index
 
 ```bash
