@@ -4,9 +4,9 @@
 
 ---
 
-## Lab 2: Part A – Ubuntu/Linux (Official Method)
+## Lab 2: Part A – Ubuntu/Linux (Official Method) 
 
-### Step 1: Install Docker (Official Method)
+### Install Docker (Official Method) - (Skip this step, if already installed)
 
 ```bash
 sudo apt update
@@ -17,16 +17,21 @@ sudo apt update
 sudo apt install -y docker-ce docker-ce-cli containerd.io
 sudo systemctl start docker
 sudo systemctl enable docker
+sudo usermod -aG docker $USER
+exit
 ```
 
-### Step 2: Verify Docker Installation
+### Verify Docker Installation
 
 ```bash
 docker --version
 sudo systemctl status docker
+docker ps
+docker ps -a
+docker images
 ```
 
-### Step 3: Run Hello World Container
+### Run Hello World Container
 
 ```bash
 docker run hello-world
@@ -34,7 +39,7 @@ docker run hello-world
 
 * Confirms Docker installation and container runtime.
 
-### Step 4: Run Apache HTTP Server Container
+### Run Apache HTTP Server Container
 
 ```bash
 docker run -d -p 8080:80 --name apache-server httpd
@@ -44,7 +49,7 @@ docker run -d -p 8080:80 --name apache-server httpd
 * `-p 8080:80` maps container port 80 to host port 8080
 * Access in browser: `http://localhost:8080`
 
-### Step 5: Run Nginx Container
+### Run Nginx Container
 
 ```bash
 docker run -d -p 8081:80 --name nginx-server nginx
@@ -53,13 +58,13 @@ docker run -d -p 8081:80 --name nginx-server nginx
 * Maps Nginx port 80 to host port 8081
 * Access in browser: `http://localhost:8081`
 
-### Step 6: Check Running Containers
+### Check Running Containers
 
 ```bash
 docker ps
 ```
 
-### Step 7: Stop and Remove Containers
+### Stop and Remove Containers
 
 ```bash
 docker stop apache-server nginx-server
@@ -70,12 +75,12 @@ docker rm apache-server nginx-server
 
 ## Lab 2: Part B – Windows (Using Docker Desktop)
 
-### Step 1: Install Docker Desktop
+### Install Docker Desktop - (Skip this step, if already installed)
 
 * Download and install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 * Ensure Docker Desktop is running.
 
-### Step 2: Verify Installation
+###  Verify Installation
 
 Open **PowerShell**:
 
@@ -83,13 +88,13 @@ Open **PowerShell**:
 docker --version
 ```
 
-### Step 3: Run Hello World Container
+### Run Hello World Container
 
 ```powershell
 docker run hello-world
 ```
 
-### Step 4: Run Apache HTTP Server Container
+### Run Apache HTTP Server Container
 
 ```powershell
 docker run -d -p 8080:80 --name apache-server httpd
@@ -97,7 +102,7 @@ docker run -d -p 8080:80 --name apache-server httpd
 
 * Access: `http://localhost:8080`
 
-### Step 5: Run Nginx Container
+### Run Nginx Container
 
 ```powershell
 docker run -d -p 8081:80 --name nginx-server nginx
@@ -105,13 +110,13 @@ docker run -d -p 8081:80 --name nginx-server nginx
 
 * Access: `http://localhost:8081`
 
-### Step 6: Check Running Containers
+### Check Running Containers
 
 ```powershell
 docker ps
 ```
 
-### Step 7: Stop and Remove Containers
+### Stop and Remove Containers
 
 ```powershell
 docker stop apache-server nginx-server
