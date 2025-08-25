@@ -4,7 +4,6 @@
 Consolidate all Docker knowledge by deploying a real-world, multi-container application using Docker Compose.  
 This lab includes a **Flask web app**, **Redis cache**, and **PostgreSQL database**.
 
----
 
 ## Features
 - Multi-container orchestration
@@ -14,7 +13,6 @@ This lab includes a **Flask web app**, **Redis cache**, and **PostgreSQL databas
 - Hands-on Dockerfile and Docker Compose usage
 - Compatible with Linux, WSL, and Windows PowerShell/CMD
 
----
 
 ### Create directories
 ```bash
