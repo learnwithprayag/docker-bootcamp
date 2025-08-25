@@ -54,7 +54,7 @@ docker run --rm -v myvolume:/data busybox ls /data
 
 * Shows files stored in the volume even after the container is removed.
 
-###  Remove Volume (Optional)
+###  Remove Volume 
 
 ```bash
 docker volume rm myvolume
@@ -107,7 +107,7 @@ docker rm volume-nginx
 docker run --rm -v myvolume:/data busybox ls /data
 ```
 
-###  Remove Volume (Optional)
+###  Remove Volume 
 
 ```powershell
 docker volume rm myvolume
