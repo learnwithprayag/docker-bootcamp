@@ -85,7 +85,7 @@ EOF
 
 # 6. Deploy the application
 cd docker-capstone
-docker-compose up -d --build
+docker compose up -d --build
 ````
 
 ## Notes
@@ -98,5 +98,3 @@ docker-compose up -d --build
   * Redis caching
   * PostgreSQL persistence
   * Container networking
-
-
