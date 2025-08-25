@@ -104,5 +104,6 @@ Participants will be able to:
 
 ## Author & License
 
-### Author: Prayag Sangode
-### License: MIT License © 2025 Prayag Sangode
+**Author:** Prayag Sangode
+**License:** [MIT License](https://opensource.org/licenses/MIT)
+
