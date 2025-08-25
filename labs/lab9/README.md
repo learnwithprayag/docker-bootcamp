@@ -123,7 +123,7 @@ ssh-keygen -t rsa -b 4096 -C "docker-ci-cd-deploy" -f docker_ci_cd_key
 
 ```bash
 git add .
-git commit -m "Add GitHub Actions workflow for Docker CI"
+git commit -m "Add GitHub Actions workflow for Docker CI CD"
 git push origin main
 ```
 
